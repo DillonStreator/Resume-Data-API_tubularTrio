@@ -1,5 +1,5 @@
 class EducationsController < ApplicationController
-  
+
   def index 
     render "index.json.jbuilder"
   end
@@ -15,4 +15,8 @@ class EducationsController < ApplicationController
   def update
     render "update.json.jbuilder"
   end 
+
+  def destroy
+    render "destroy.json.jbuilder"
+  end
 end
