@@ -36,6 +36,23 @@ ActiveRecord::Schema.define(version: 20170509012542) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "experiences", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "job_title"
+    t.string   "company_name"
+    t.text     "details"
+    t.integer  "student_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string   "skill"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "student_skills", force: :cascade do |t|
     t.integer  "skill_id"
     t.integer  "student_id"
