@@ -14,5 +14,9 @@ class StudentsController < ApplicationController
 
   def update
     render "update.json.jbuilder"
+  end 
+
+  def destroy
+    render "destroy.json.jbuilder"
   end
 end
