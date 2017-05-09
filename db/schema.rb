@@ -15,6 +15,27 @@ ActiveRecord::Schema.define(version: 20170509010632) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "capstones", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.string   "url"
+    t.string   "screenshot_url"
+    t.integer  "student_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  create_table "educations", force: :cascade do |t|
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.string   "degree"
+    t.string   "university_name"
+    t.string   "details"
+    t.integer  "student_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "student_skills", force: :cascade do |t|
     t.integer  "skill_id"
     t.integer  "student_id"
