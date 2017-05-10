@@ -1,12 +1,12 @@
-
-  50.times do 
-    skill = Skill.new(
-      skill: Faker::Job.key_skill
-    )
-    skill.save
-  end
+50.times do 
+  skill = Skill.new(
+    skill: Faker::Job.key_skill
+  )
+  skill.save
+end
 
 20.times do
+
   first_name = Faker::Name.first_name
   last_name = Faker::Name.last_name
   start_date = Faker::Date.between(5.years.ago, Date.today)
@@ -65,7 +65,6 @@
     )
     education.save
   end
-
 
 end
 puts "seeds complete"

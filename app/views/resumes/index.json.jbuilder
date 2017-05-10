@@ -39,7 +39,7 @@ json.array! @resumes.each do |resume|
   json.degree education.degree
   json.university_name education.university_name
   json.details education.details
-  json.student_id education.university_name
+  json.student_id education.student_id
   end
 end 
 
