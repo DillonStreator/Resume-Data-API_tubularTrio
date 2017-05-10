@@ -11,7 +11,7 @@ json.array! @resumes.each do |resume|
   json.resume_url resume.resume_url
   json.github_url resume.github_url
   json.photo_url resume.photo_url
-  json.experiences resume.experiences do |experience|
+  json.experiences resume.experiences.each do |experience|
     json.id experience.id
     json.start_date experience.start_date
     json.end_date experience.end_date
@@ -20,7 +20,7 @@ json.array! @resumes.each do |resume|
     json.details experience.details
     json.student_id experience.student_id
   end
-  json.capstones resume.capstones do |capstone|
+  json.capstones resume.capstones.each do |capstone|
     json.id capstone.id
     json.name capstone.name
     json.description capstone.description
@@ -28,7 +28,7 @@ json.array! @resumes.each do |resume|
     json.screenshot_url capstone.screenshot_url
     json.student_id capstone.student_id
   end
-  json.skills resume.skills do |skill|
+  json.skills resume.skills.each do |skill|
     json.id skill.id
     json.skill skill.skill
   end
