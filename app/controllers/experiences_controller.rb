@@ -20,7 +20,7 @@ class ExperiencesController < ApplicationController
        student_id: params[:student_id]
      )
      @experience.save
-    render "create.json.jbuilder"
+     redirect_to "/resumes"
   end
 
   def update
@@ -32,14 +32,14 @@ class ExperiencesController < ApplicationController
      @experience.details = params[:details] || @experience.details 
      @experience.student_id = params[:student_id] || @experience.student_id
      @experience.save
-     render "show.json.jbuilder"
+     redirect_to "/resumes"
    
   end 
 
   def destroy
     @experience = Experience.find_by(id: params[:id])
     @experience.destroy
-    render "destroy.json.jbuilder"
+    redirect_to "/resumes"
   end
   
 end
