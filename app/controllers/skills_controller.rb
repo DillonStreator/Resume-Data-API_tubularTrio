@@ -1,22 +1,28 @@
 class SkillsController < ApplicationController
 
-  def index 
-    render "index.json.jbuilder"
-  end
 
   def show 
-    render "show.json.jbuilder"
+    @skill = Skill.find_by(id: params[:id])
+    
+    redirect_to "show.json.jbuilder"
   end 
 
-  def create 
-    render "create.json.jbuilder"
+  def create
+
+    @skill=Skill.new(
+      skill: params[:skill]) 
+    redirect_to "/resumes"
   end
 
   def update
-    render "update.json.jbuilder"
+    @skill = Skill.find_by(id: params[:id])
+    @skill.skill = params[:skill] || @skill.skill
+    redirect_to "/resumes"
   end 
 
   def destroy
-    render "destroy.json.jbuilder"
+    @skill = Skill.find_by(id: params[:id])
+    @skill.destroy
+    redirect_to "/resumes"
   end
 end
