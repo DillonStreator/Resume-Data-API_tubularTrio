@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
 
+      get "/resumes" => "resumes#index"
+      get "/resumes/:id" => "resumes#show"
+
       get "/students" => "students#index"
       post "/students" => "students#create"
       get "/students/:id" => "students#show"
