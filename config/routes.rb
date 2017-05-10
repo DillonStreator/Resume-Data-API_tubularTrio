@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1 do
+  # namespace :api do
+  #   namespace :v1 do
 
       get "/resumes" => "resumes#index"
       get "/resumes/:id" => "resumes#show"
@@ -30,5 +30,5 @@ Rails.application.routes.draw do
       delete "/skills/:id" => "skills#destroy"
       
     end
-  end
-end
+  # end
+# end

@@ -1,6 +1,6 @@
 class ResumesController < ApplicationController
   def index 
-    @resumes= Students.all
+    @resumes = Student.all
     render "index.json.jbuilder"
   end
 end
