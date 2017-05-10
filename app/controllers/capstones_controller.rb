@@ -30,7 +30,7 @@ class CapstonesController < ApplicationController
     @capstone.screenshot_url = params[:screenshot_url] || @capstone.screenshot_url
     @capstone.student_id = params[:student_id] || @capstone.student_id
     @capstone.save
-    render "update.json.jbuilder"
+    redirect_to "/resumes"
   end 
 
   def destroy
